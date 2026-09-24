@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detail</title>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>タイトル: {{ trip.title }}</p>
+        <p>内容: {{ trip.content }}</p>
+        <p>緯度: {{ trip.latitude }}</p>
+        <p>経度: {{ trip.longitude }}</p>
+        <p>作成日: {{ trip.create_date }}</p>
+
+        <a href="/edit?id={{ trip.id }}">編集</a>
+        <form action="/delete?id={{ trip.id }}" method="post">
+            <input type="hidden" name="id" value="{{ trip.id }}">
+            <button type="submit">削除</button>
+        </form>    
+    </body>
+</html>

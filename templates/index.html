@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Create Date</th>
+        </tr>
+        {% for i in all_data %}
+        <tr>
+            <td><a href="/edit?id={{i.id}}">{{i.title}}</a></td>
+            <td>{{ i.content }}</td>
+            <td>{{ i.create_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+     <p><a href="/create">新規作成</a></p>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/update?id={{ trip.id }}" method="post">
+        <input type="hidden" name="id" value="{{ trip.id }}">
+        <p>タイトル: <input type="text" name="title" value="{{ trip.title }}"></p>
+        <p>内容: <textarea name="content">{{ trip.content }}</textarea></p>
+        <p>緯度: <input type="text" name="latitude" value="{{ trip.latitude }}"></p>
+        <p>経度: <input type="text" name="longitude" value="{{ trip.longitude }}"></p>
+        <p><input type="submit" value="更新"></p>
+    </form>
+    <form action="/delete?id={{ trip.id }}" method="post">
+        <input type="hidden" name="id" value="{{ trip.id }}">
+        <button type="submit">削除</button>
+    </form>
+    </form>
+</body>
+</html>
